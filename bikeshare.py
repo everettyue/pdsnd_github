@@ -1,3 +1,6 @@
+#This is the python code for bikeshare project. CREDIT: Sen Yue(Everett)
+#modified: 6/13/2021
+
 import time
 import pandas as pd
 import numpy as np
@@ -6,7 +9,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-def get_filters():
+def get_filters(): #this function will ask user for some input, and it will ask again if the input is invalid.
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -23,7 +26,7 @@ def get_filters():
     day = ''
     day_list = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
     month_list = ["january", "february", "march", 'april', 'may', 'june']
-    
+
     while True:
         city = input("Would you like to see data for Chicago, New York City, or Washington?\n")
         city = city.lower()
@@ -71,7 +74,7 @@ def get_filters():
             else:
                 print("Invalid day, please try again.")
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-       
+
 
     print('-'*40)
     return city, month, day
@@ -88,13 +91,13 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     df = pd.read_csv(CITY_DATA[city])
-    df['Start Time'] = pd.to_datetime(df['Start Time'])        
+    df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
-    
+
     if month != '':
         # use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
@@ -104,7 +107,7 @@ def load_data(city, month, day):
     if day != '':
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
-        
+
     return df
 
 
@@ -114,7 +117,7 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    
+
     # TO DO: display the most common month
     print("Most popular Month:", df['month'].value_counts().idxmax())
     # TO DO: display the most common day of week
@@ -133,7 +136,7 @@ def station_stats(df):
     start_time = time.time()
     df['conbine'] = df['Start Station'] + " to " + df['End Station']
     # TO DO: display most commonly used start station
-    print("Most popular start station:", df['Start Station'].value_counts().idxmax()) 
+    print("Most popular start station:", df['Start Station'].value_counts().idxmax())
 
     # TO DO: display most commonly used end station
     print("Most popular end station:", df['End Station'].value_counts().idxmax())
@@ -190,7 +193,7 @@ def view_raw(df):
             break
         else:
             print("Invalid option, please try again.")
-    if view == 'yes':        
+    if view == 'yes':
         print(df.head())
 
 def main():
