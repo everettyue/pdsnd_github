@@ -15,5 +15,5 @@ new_york_city.csv
 washington.csv
 
 ### Credits
-Sen Yue
+Sen Yue(Everett)
 https://github.com/everettyue/pdsnd_github.git
