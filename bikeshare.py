@@ -4,6 +4,7 @@ import time
 import pandas as pd
 import numpy as np
 
+# the data are from three cities: chicago, new york city and washington
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -75,7 +76,7 @@ def get_filters():
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
 
 
-    print('-'*40)
+    print('-'*40) #for better formating
     return city, month, day
 
 
