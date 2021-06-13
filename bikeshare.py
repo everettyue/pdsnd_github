@@ -185,7 +185,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def view_raw(df):
+def view_raw(df): # this function aks user whether they want to view the first 5 lines of the raw data
     while True:
         view = input("Would you like to view the raw data? 'Yes' or 'No' \n")
         view = view.lower()
