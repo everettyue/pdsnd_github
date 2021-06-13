@@ -6,7 +6,7 @@
 Post your work on Github
 
 ### Description
-This project is to upload my files for the previous project to Github
+This project is to upload my files for the previous project to Github.
 
 ### Files used
 bikeshare.py
