@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 #This is the python code for bikeshare project. CREDIT: Sen Yue(Everett)
 #modified: 6/13/2021
 
+||||||| 0cb63f5
+=======
+
+#importing the necessary library for this code
+>>>>>>> 608c6c3c62f52a3b2e23af1f542bc6950c151212
 import time
 import pandas as pd
 import numpy as np
 
+# the data are from three cities: chicago, new york city and washington
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -74,9 +81,15 @@ def get_filters(): #this function will ask user for some input, and it will ask 
             else:
                 print("Invalid day, please try again.")
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+<<<<<<< HEAD
+
+||||||| 0cb63f5
+       
+=======
+>>>>>>> 608c6c3c62f52a3b2e23af1f542bc6950c151212
 
 
-    print('-'*40)
+    print('-'*40) #for better formating
     return city, month, day
 
 
@@ -185,7 +198,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def view_raw(df):
+def view_raw(df): # this function aks user whether they want to view the first 5 lines of the raw data
     while True:
         view = input("Would you like to view the raw data? 'Yes' or 'No' \n")
         view = view.lower()
